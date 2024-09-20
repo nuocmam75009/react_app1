@@ -7,6 +7,7 @@ function TodoList() {
 
     const addTodo = todo => {
         // no whitespaces
+        // Function to add a todo
         if (!todo.text || /^\s*$/.test(todo.text)) {
             return;
         }
@@ -18,6 +19,7 @@ function TodoList() {
     }
 
     const removeTodo = id => {
+        // Function to remove the todo
         const removeArr = [...todos].filter(todo => todo.id !== id);
 
         setTodos(removeArr);
@@ -25,6 +27,7 @@ function TodoList() {
 
 
     const updateTodo = (todoId, newValue) => {
+        // Function to update the Todo
         if (!newValue.text || /^\s*$/.test(newValue.text)) {
             return;
         }
@@ -33,6 +36,7 @@ function TodoList() {
     };
 
     const completeTodo = id => {
+        // Function to complete the todo
         let updatedTodos = todos.map(todo => {
             if (todo.id === id) {
                 todo.isComplete = !todo.isComplete;
